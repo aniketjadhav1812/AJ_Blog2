@@ -10,160 +10,39 @@
 </head>
 
 <body>
-    <div id="header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo"><a href="./">AJ_<span>Blog</span></a></div>
-                <ul id="sidemenu">
-                    <li><a class="menu-btn active" href="#header" onclick="addclass()">Home</a></li>
-                    <li><a class="menu-btn" href="#about" onclick="addclass()">About</a></li>
-                    <li><a class="menu-btn" href="#projects" onclick="addclass()">Projects</a></li>
-                    <li><a class="menu-btn" href="#contact" onclick="addclass()">Contact</a></li>
-                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+    <div id="menu" onclick="openmenu()"><i class="fa-solid fa-bars"></i></div>
+    <div class="container">
+        <div class="sidebar" id="side">
+            <nav>
+                <div id="cross" onclick="closemenu()"><i class="fa-solid fa-xmark"></i></div>
+                <div class="logo"><img src="./LOGO.png" alt="logo"></div>
+                <ul>
+                    <li class="menu-btn active-btn" onclick="opentab('home')">Home</li>
+                    <li class="menu-btn" onclick="opentab('about')">About</li>
+                    <li class="menu-btn" onclick="opentab('skills')">Skills</li>
+                    <li class="menu-btn" onclick="opentab('contact')">Contact<br>Me</li>
                 </ul>
-                <i class="fa-solid fa-bars" id="none" onclick="openmenu()"></i>
-
             </nav>
-            <div class="text1">Hello, Myself</div>
-            <div class="text2">Aniket Jadhav</div>
-            <div class="text3">I'm <span id="typing-1"></span></div>
         </div>
-    </div>
+        <div class="content">
+            <div id="home" class=" tabs active">
+                <h3>Hello, Myself</h3>
+                <h1>Aniket Jadhav</h1>
+                <h3 class="text-3">And I'm <span id="text1"></span></h3>
+            </div>
 
-    <div id="about">
-        <div class="container">
-            <div class="content">
-                <div class="col-1">
-                    <img src="img.jpg">
-                </div>
-                <div class="col-2">
-                    <div class="title">
-                        About
-                    </div>
-                    <div class="sub-titles">
-                        <p class="tablinks active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tablinks" onclick="opentab('experience')">Experience</p>
-                        <p class="tablinks" onclick="opentab('education')">Education</p>
-                    </div>
-                    <div class="tab-content active-tab" id="skills">
-                        <div class="bars">
-                            <div class="info">
-                                <span>HTML</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="line html"></div>
-                            <div class="info">
-                                <span>CSS</span>
-                                <span>70%</span>
-                            </div>
-                            <div class="line css">
-                            </div>
-                            <div class="info">
-                                <span>JavaScript</span>
-                                <span>40%</span>
-                            </div>
-                            <div class="line js"></div>
-                        </div>
-                    </div>
-                    <div class="tab-content" id="experience">
-                        <ul>
-                            <li><span>Front-End Developing</span><br>Experience of 2-3 months.</li>
-                            <li><span>C language</span><br>Experience of 5-6 months.</li>
-                            <li><span>JavaScript</span><br>Still learning..</li>
-                        </ul>
-                    </div>
-                    <div class="tab-content" id="education">
-                        <ul>
-                            <li><span>2023</span><br>HTML CSS COMPLETED <br>Learning JavaScript.</li>
-                            <li><span>2022</span><br>Completed C Language(Basic).</li>
-                        </ul>
-                    </div>
-
-                </div>
+            <div id="about" class="tabs">
+                <h1>ABOUT ME</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, mollitia animi temporibus dolor porro
+                    provident quibusdam asperiores id quidem? Corrupti nihil possimus voluptatum eveniet corporis?
+                    Voluptatum quod aliquam soluta rem.</p>
             </div>
         </div>
     </div>
-
-    <div id="projects">
-        <div class="container">
-            <div class="title">
-                Projects
-            </div>
-            <div class="program-list">
-                <div class="program">
-                    <img src="./js_img.jpg" alt="javaScript">
-                    <div class="layer">
-                        <h3>GAME - Guess the number.</h3>
-                        <p>This is a basic game created using JavaScript.In this game you have to guess number between 1
-                            to 100.
-                        </p>
-                        <a href="https://replit.com/@AniketJadhav17/Guess-The-Number?v=1" target="_blank"><i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="program">
-                    <img src="./C_img.jpg" alt="javaScript">
-                    <div class="layer">
-                        <h3>Matrix</h3>
-                        <p>This is a 'C Program' for performing operations on matrix/matrices.<br>
-                            <span>Note:-This program only runs in "VS CODE With MinGW "compiler.</span>
-                        </p>
-                        <a href="#" onclick="warn()"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-    <div id="contact">
-        <div class="container">
-            <div class="content">
-                <div class="contact-left">
-                    <h1>Contact Me</h1>
-                    <p><i class="fa-solid fa-paper-plane"></i>aniketjadhav6134@gmail.com</p>
-                    <div class="social-icons">
-                        <a href="https://instagram.com/aniket_jadhav6134?igshid=ZDdkNTZiNTM="><i class="fa-brands fa-instagram"><span> Follow on Instagram</span></i></a>
-                    </div>
-                </div>
-                <div class="contact-right">
-                   <form name="submit-to-google-sheet">
-                       <input type="text" name="Name" placeholder="Your Name" required>
-                       <input type="email" name="email" placeholder="Your Email" required>
-                       <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn">Submit</button>
-                   </form> 
-                   <span id="msg"></span>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>Created by <a href="./">AJ_Blog</a> | Copyright &copy; 2023. All rights reseverd.</p>
-        </div>
-    </div>
-      
     <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
-    <script src="./script.js"></script>
+    <script src="./index.js"></script>
     <script src="https://kit.fontawesome.com/4f309e4907.js" crossorigin="anonymous"></script>
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxRm9GsR6yzCXptLZ6g2YItq0dobQjzwSbAzZf-RamU6yEeDU52odJny4UdWTLmbtaT/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById('msg')
 
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "Message sent successfully"
-                setTimeout(() => {
-                    msg.innerHTML= ""
-                }, 3000);
-                form.reset()
-        })
-            .catch(error => console.error('Error!', error.message))
-        })
-      </script>
 </body>
 
 </html>
